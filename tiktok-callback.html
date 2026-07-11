@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok認証完了 | kemorie71</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css?v=2">
+<style>
+  .doc {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 64px auto;
+    padding: 40px 28px;
+    color: #dfe6f3;
+    line-height: 1.9;
+    font-size: 15px;
+    text-align: center;
+  }
+  .doc h1 { font-size: 22px; margin-bottom: 16px; color: #fff; }
+  .doc p { color: #b9c3d6; }
+  .doc .code-box {
+    margin: 24px 0;
+    padding: 16px;
+    border: 1px solid rgba(78, 225, 255, .4);
+    border-radius: 12px;
+    background: rgba(78, 225, 255, .06);
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 13px;
+    color: #4ee1ff;
+  }
+  .doc button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #4ee1ff, #7c5cff);
+    color: #0b0f1a;
+    font-weight: 700;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <main class="doc">
+    <h1>✅ TikTok認証が完了しました</h1>
+    <p>このページのURL全体をコピーして、ターミナルの <code>tiktok_auth.py</code> に貼り付けてください。</p>
+    <div class="code-box" id="url">読み込み中...</div>
+    <button onclick="navigator.clipboard.writeText(location.href).then(()=>this.textContent='コピーしました ✓')">URLをコピー</button>
+    <p id="status" style="margin-top:16px;font-size:13px;color:#7e8aa3;"></p>
+  </main>
+
+  <script>
+    document.getElementById("url").textContent = location.href;
+    var qs = new URLSearchParams(location.search);
+    document.getElementById("status").textContent = qs.has("code")
+      ? "認証コードを受け取りました。"
+      : "認証コードが見つかりません。認可をやり直してください。";
+  </script>
+</body>
+</html>
