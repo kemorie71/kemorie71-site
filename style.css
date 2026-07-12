@@ -229,6 +229,7 @@ body {
 .icon-yt   { color: #ff4e45; }
 .icon-th   { color: #eaeffa; }
 .icon-ig   { color: #ff5c8a; }
+.icon-tt   { color: #4de8e0; }
 
 .label {
   grid-area: label;
